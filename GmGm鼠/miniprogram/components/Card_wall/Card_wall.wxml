@@ -1,22 +1,25 @@
 <!--components/Card_wall/Card_wall.wxml-->
 <!-- 首页-卡片墙-组件 -->
-<view>
+<view class="view0">
+    <!-- 头 -->
     <view class="view">
-        <text>{{innerText}}</text>
-        <navigator wx:if="{{innerJudge==1?true:false}}">查看更多</navigator>
+        <text class="text">{{innerText}}</text>
+        <navigator class="navigator" wx:if="{{innerJudge==1?true:false}}">查看更多</navigator>
     </view>
+    <!-- 卡片 -->
     <scroll-view class="scroll-view" scroll-x="ture" enable-flex="true">
-        <!-- <view wx:for="{{innerImg}}" wx:key="index"><image src="{{item.src}}"/></view> -->
-        <view class="scroll-view1" >55
-            <!-- <view>
-                <image src="https://img.tapimg.com/market/lcs/baec5c3dd9c7619a65fb0ea8b0735d42_360.png?imageMogr2/auto-orient/strip" alt=""/>
-                <view>
-                    <text>不思议迷宫</text>
-                    <image src="https://img2.tapimg.com/bbcode/images/1a667685a3d219cfd780ee3f0592a067.png" alt=""/>
+        <view class="scroll-view1" wx:for="{{innerContent}}" wx:key="index">
+            <view class="scroll-view11">
+                <image src="{{item.img}}" alt="" class="scroll-view01"/>
+                <view class="scroll-view02">
+                    <view>{{item.gm_name}}</view>
+                    <block wx:for="{{item.stars}}" wx:key="index">
+                        <image src="../../images/icons/stars.png" alt="" class="scroll-view03"/>
+                    </block>
                 </view>
             </view>
-            <text>游戏里有200多只冈布奥，它们每一只都有独特的文化背景和来头，这也导致了它们的性格、技能各异。比如未来猫冈布奥有神奇道具口袋、帮派干部冈布奥喜欢抢劫NPC...</text>
-            <text>—— —— 倚天</text> -->
+            <view class="text2">{{item.comment}}</view>
+            <view class="text3"><text class="text4">— —</text> {{item.uname}}</view>
         </view>
     </scroll-view>
 </view>

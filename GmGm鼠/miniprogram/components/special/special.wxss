@@ -1,5 +1,24 @@
 /* components/special/special.wxss */
-.special{padding: 25rpx;border-bottom: 1rpx solid #f5f5f5;}
+.special{padding: 25rpx;border-bottom: 1rpx solid #eeeeee;}
 .t1{font-size: 25rpx;color: #999999;}
 .i1{width: 100%;height: 250rpx;border-radius: 10rpx;margin: 10rpx 0;}
 .t3{margin-left: 40rpx;font-weight: bold;}
+
+.special-view{display: flex;margin-left: 15rpx;}
+.special-view01{width: 90rpx;height: 90rpx;border-radius: 20rpx;}
+.special-view02{
+  margin: 0 0 8rpx 15rpx;
+  font-weight: bold;
+  color: #999999;
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 26rpx;
+}
+.special-view03{
+  font-size: 32rpx;
+  color: black;
+}
+.special-view04{width: 200rpx;color: #14B9C8;font-size: 20rpx;padding-top: 5rpx;text-align: center;}
+.special-view05{display: flex;font-weight: bold;font-size: 38rpx;justify-content: center;}
+.special-view06{width: 38rpx;height: 38rpx;padding: 10rpx 8rpx 0 0;}
