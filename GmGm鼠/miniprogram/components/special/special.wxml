@@ -1,0 +1,7 @@
+<!--components/special/special.wxml-->
+<!-- 首页-专题-组件 -->
+<view class="special">
+    <text class="t1">来自专题</text>
+    <image class="i1" src="{{innerImg}}"/>
+    <text class="t3">{{innerText}}</text>
+</view>

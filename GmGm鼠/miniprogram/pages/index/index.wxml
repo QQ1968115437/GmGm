@@ -1,0 +1,22 @@
+<!--pages/index/index.wxml-->
+<!-- 顶部导航 -->
+<view class="Top_nav">
+    <view class="{{top_nav==1?'Top_nav-actv':''}}" bindtap="Top_nav_actv">首页</view>
+    <view class="{{top_nav==1?'':'Top_nav-actv'}}" bindtap="Top_nav_actv">咨讯</view>
+</view>
+<view>
+    <!-- 顶部轮播 -->
+    <view class="Top_Carousel">
+        <swiper autoplay="true" indicator-dots="true" indicator-color="#fff" indicator-active-color="#d0cc36" circular="true">
+            <swiper-item wx:for="{{Top_Carousel}}" wx:key="index" >
+                <view style="background-image: url({{item.bg_src}})">
+                    <text>{{item.text}}</text>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 新游预告 -->
+    <component-special innerText="一月新游预告" innerImg="https://img.tapimg.com/market/images/669cd7eb91e4a0a4ed6e5cc2c99940c3.png?imageView2/0/w/1080/h/9999/q/80/format/jpg/interlace/1/ignore-error/1"></component-special>
+    <!-- 安利墙 -->
+    <component-Card_wall innerText="安利墙" innerJudge="1" innerImg="{{Amway_wall}}"></component-Card_wall>
+</view>
