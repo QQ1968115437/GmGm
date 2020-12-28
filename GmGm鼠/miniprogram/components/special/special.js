@@ -4,7 +4,7 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        innerText:String,innerImg:String,innerHead:String
+        innerHead:Number,innerImg:String,innerText:String,innerImgsm:String,innerText1:String,innerText2:String,innerPeople:Number,innerScore:Number
     },
 
     /**

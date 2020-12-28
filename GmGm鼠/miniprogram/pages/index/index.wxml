@@ -1,29 +1,80 @@
 <!--pages/index/index.wxml-->
 <!-- 顶部导航 -->
 <view class="Top_nav">
-    <view class="{{top_nav==1?'Top_nav-actv':''}}" bindtap="Top_nav_actv">首页</view>
-    <view class="{{top_nav==1?'':'Top_nav-actv'}}" bindtap="Top_nav_actv">咨讯</view>
+    <view class="{{top_nav==0?'Top_nav-actv':''}}" bindtap="Top_nav_actv0">首页</view>
+    <view class="{{top_nav==0?'':'Top_nav-actv'}}" bindtap="Top_nav_actv1">咨讯</view>
 </view>
-<view>
-    <!-- 顶部轮播 -->
-    <view class="Top_Carousel">
-        <swiper autoplay="true" indicator-dots="true" indicator-color="#fff" indicator-active-color="#d0cc36" circular="true">
-            <swiper-item wx:for="{{Top_Carousel}}" wx:key="index" >
-                <view style="background-image: url({{item.bg_img}})">
-                    <text>{{item.text}}</text>
+<!-- current 当前所在滑块的 index 通过切换top_nav的值来切换swiper-item -->
+<swiper current="{{top_nav}}" bindchange='bindChange' style="height: {{Total_height}}rpx">
+    <!-- 首页 -->
+    <swiper-item>
+        <view>
+            <!-- 顶部轮播 -->
+            <view class="Top_Carousel">
+                <swiper autoplay="true" indicator-dots="true" indicator-color="#fff" indicator-active-color="#14B9C8" circular="true">
+                    <swiper-item wx:for="{{Top_Carousel}}" wx:key="index" >
+                        <view class="Top_Carousel_view" style="background-image: url({{item.bg_img}})">
+                            <text>{{item.text0}}</text>
+                            <!-- /* 轮播图对应游戏 */ -->
+                            <view class="Top_Carousel_deputy">
+                                <view class="Top_Carousel_deputy_00">
+                                    <image src="{{item.imgsm}}" alt=""/>
+                                </view>
+                                <view class="Top_Carousel_deputy_01">
+                                    <view>{{item.text1}}</view>
+                                    <text>{{item.text2}}</text>
+                                </view>
+                                <view class="Top_Carousel_deputy_02">
+                                    <text>{{item.people}}人评分</text>
+                                    <view>
+                                        <image src="../../images/icons/stars_circle_white.png"/>
+                                        <text>{{item.score}}</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <!-- 一周新游预约榜（1.18-1.25）--组件Card_wall -->
+            <component-Card_wall class="h4" innerText="一周新游预约榜（1.18-1.25）" innerContent="{{Card_block.Weekly_appointment_list}}">{{555555}}</component-Card_wall>
+            <!-- 安利墙--组件Card_wall -->
+            <component-Card_wall class="h3" innerId="1" innerText="安利墙" innerContent="{{Amway_wall}}"></component-Card_wall>
+            <!-- 编辑推荐--组件special -->
+            <component-special class="h2" innerHead="2" innerImg="{{Edit_recommend[2].img}}" innerImgsm="{{Edit_recommend[2].imgsm}}" innerText1="{{Edit_recommend[2].text1}}" innerText2="{{Edit_recommend[2].text2}}" innerPeople="{{Edit_recommend[2].people}}" innerScore="{{Edit_recommend[2].score}}"></component-special>
+            <!-- 精品游戏--组件Card_wall -->
+            <component-Card_wall class="h4" innerText="精品游戏" innerContent="{{Card_block.Boutique}}"></component-Card_wall>
+            <!-- 即将上线--组件Card_wall -->
+            <component-Card_wall class="h4" innerText="即将上线" innerContent="{{Card_block.Coming_Soon}}"></component-Card_wall>
+            <!-- 版本更新--组件special -->
+            <component-special class="h2" innerHead="1" innerImg="{{Edition_update[1].img}}" innerImgsm="{{Edition_update[1].imgsm}}" innerText1="{{Edition_update[1].text1}}" innerText2="{{Edition_update[1].text2}}" innerPeople="{{Edition_update[1].people}}" innerScore="{{Edition_update[1].score}}"></component-special>
+            <!-- 来自专题--组件special -->
+            <component-special class="h1" innerHead="0" innerImg="{{From_special[0].img}}" innerText="{{From_special[0].text}}"></component-special>
+            <!-- 玩赏家推荐游戏--组件Card_wall -->
+            <component-Card_wall class="h3" innerId="1" innerText="玩赏家推荐游戏" innerJudge="1" innerContent="{{Player_recommendation}}"></component-Card_wall>
+            <!-- 来自专题--组件special -->
+            <component-special class="h1" innerHead="0" innerImg="{{From_special[3].img}}" innerText="{{From_special[3].text}}"></component-special>
+            <!-- 编辑推荐--组件special -->
+            <component-special class="h2" innerHead="2" innerImg="{{Edit_recommend[4].img}}" innerImgsm="{{Edit_recommend[4].imgsm}}" innerText1="{{Edit_recommend[4].text1}}" innerText2="{{Edit_recommend[4].text2}}" innerPeople="{{Edit_recommend[4].people}}" innerScore="{{Edit_recommend[4].score}}"></component-special>
+            <!-- 版本更新--组件special -->
+            <component-special class="h2" innerHead="1" innerImg="{{Edition_update[5].img}}" innerImgsm="{{Edition_update[5].imgsm}}" innerText1="{{Edition_update[5].text1}}" innerText2="{{Edition_update[5].text2}}" innerPeople="{{Edition_update[5].people}}" innerScore="{{Edition_update[5].score}}"></component-special>
+        </view>
+    </swiper-item>
+    <!-- 咨讯 -->
+    <swiper-item>
+        <view>
+            <view class="news_sm">
+                <view>
+                    <text>[咨讯]《侠道游歌 / Songs of Wuxia》是一款古风二次元的角色扮演游戏。玩家将陪同少女吕灵姬开辟自己的侠道，拨开心间的迷雾，改变这江湖！</text>
+                    <view>
+                        <text>PS|Xbox|Switch</text>
+                        <text>22234</text>
+                    </view>
                 </view>
-            </swiper-item>
-        </swiper>
-    </view>
-    <!-- 来自专题--组件special -->
-    <component-special innerText="{{From_special[0].text}}" innerImg="{{From_special[0].img}}" innerHead="{{0}}"></component-special>
-    <!-- 来自专题--组件special -->
-    <component-special innerText="{{From_special[1].text}}" innerImg="{{From_special[1].img}}" innerHead="{{1}}"></component-special>
-    <!-- 来自专题--组件special -->
-    <component-special innerText="{{From_special[2].text}}" innerImg="{{From_special[2].img}}" innerHead="{{2}}"></component-special>
-    <!-- 安利墙--组件Card_wall -->
-    <component-Card_wall innerText="安利墙" innerJudge="1" innerContent="{{Amway_wall}}"></component-Card_wall>
-
-    <!-- 玩赏家推荐游戏--组件Card_wall -->
-    <component-Card_wall innerText="玩赏家推荐游戏" innerJudge="0" innerContent="{{Player_recommendation}}"></component-Card_wall>
-</view>
+                <view class="news_sm_img">
+                    <image src="https://img2.tapimg.com/bbcode/images/068fa7029df0d4126599a37159254138.jpg?imageView2/2/w/1320/h/9999/q/80/format/jpg/interlace/1/ignore-error/1"></image>
+                </view>
+            </view>
+        </view>
+    </swiper-item>
+</swiper>

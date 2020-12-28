@@ -1,25 +1,42 @@
 <!--components/Card_wall/Card_wall.wxml-->
-<!-- 首页-卡片墙-组件 -->
+<!-- 首页-卡片墙,卡片块-组件 -->
 <view class="view0">
     <!-- 头 -->
     <view class="view">
         <text class="text">{{innerText}}</text>
-        <navigator class="navigator" wx:if="{{innerJudge==1?true:false}}">查看更多</navigator>
+        <!-- 默认不写数字为0,不删除 -->
+        <navigator class="navigator" wx:if="{{innerJudge==0}}">查看更多</navigator>
     </view>
-    <!-- 卡片 -->
-    <scroll-view class="scroll-view" scroll-x="ture" enable-flex="true">
-        <view class="scroll-view1" wx:for="{{innerContent}}" wx:key="index">
-            <view class="scroll-view11">
-                <image src="{{item.img}}" alt="" class="scroll-view01"/>
-                <view class="scroll-view02">
-                    <view>{{item.gm_name}}</view>
-                    <block wx:for="{{item.stars}}" wx:key="index">
-                        <image src="../../images/icons/stars.png" alt="" class="scroll-view03"/>
-                    </block>
+    
+    <!-- 卡片墙 --><!-- 如果innerId==0则是卡片墙-->
+    <!-- 默认不写为卡片块 -->
+    <block wx:if="{{innerId==1}}">
+        <scroll-view class="scroll-view" scroll-x="ture" enable-flex="true">
+            <view class="scroll-view1" wx:for="{{innerContent}}" wx:key="index">
+                <view class="scroll-view11">
+                    <image src="{{item.img}}" alt="" class="scroll-view01"/>
+                    <view class="scroll-view02">
+                        <view>{{item.gm_name}}</view>
+                        <block wx:for="{{item.stars}}" wx:key="index">
+                            <image src="../../images/icons/stars.png" alt="" class="scroll-view03"/>
+                        </block>
+                    </view>
                 </view>
+                <view class="text2">{{item.comment}}</view>
+                <view class="text3"><text class="text4">— —</text> {{item.uname}}</view>
             </view>
-            <view class="text2">{{item.comment}}</view>
-            <view class="text3"><text class="text4">— —</text> {{item.uname}}</view>
-        </view>
-    </scroll-view>
+        </scroll-view>
+    </block>
+    <!-- 卡片块 --><!-- 反之则是卡片块-->
+    <block wx:else>
+        <scroll-view class="scroll-view" scroll-x="ture" enable-flex="true">
+            <view class="scroll-view_block" wx:for="{{innerContent}}" wx:key="index">
+                <view class="scroll-view_block1">
+                    <image src="{{item.img}}" alt="" class="scroll-view_block_img"/>
+                </view>
+                <view class="scroll-view_block_text">{{item.gm_name}}</view>
+            </view>
+        </scroll-view>
+    </block>
+
 </view>

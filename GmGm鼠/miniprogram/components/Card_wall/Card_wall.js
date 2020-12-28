@@ -4,7 +4,7 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        innerText:String,innerJudge:Number,innerContent:Array
+        innerId:Number,innerText:String,innerJudge:Number,innerContent:Array
     },
 
     /**

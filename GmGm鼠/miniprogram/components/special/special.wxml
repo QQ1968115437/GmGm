@@ -8,17 +8,17 @@
     
     <view wx:if="{{innerHead!=0?true:false}}" class="special-view">
         <view>
-            <image src=https://img.tapimg.com/market/lcs/5327838c37afb0a42abcb79ecfdae7f1_360.png?imageMogr2/auto-orient/strip" alt="" class="special-view01"/>
+            <image src="{{innerImgsm}}" alt="" class="special-view01"/>
         </view>
         <view class="special-view02">
-            <view class="special-view03">奇葩战斗家</view>
-            <text>在2020年即将结束之际，奇葩战斗家带着新版本来啦gsgdgdf</text>
+            <view class="special-view03">{{innerText1}}</view>
+            <text>{{innerText2}}</text>
         </view>
         <view class="special-view04">
-            <text>2020人评分</text>
+            <text>{{innerPeople}}人评分</text>
             <view class="special-view05">
                 <image src="../../images/icons/stars_circle.png" class="special-view06"/>
-                <text>8.7</text>
+                <text>{{innerScore}}</text>
             </view>
         </view>
     </view>
