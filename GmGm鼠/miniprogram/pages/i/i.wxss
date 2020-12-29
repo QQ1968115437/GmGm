@@ -1,1 +1,22 @@
 /* pages/i/i.wxss */
+.i_bg{height: 320rpx;background-color: #14b9c8;text-align: center;}
+.i_bg>image{width: 60%;height: 120%;position: relative;top: -20rpx;}
+
+.logon{
+    height: 600rpx;
+    border-radius: 40rpx;
+    box-shadow: 0 0 10rpx #e2e2e2;
+    margin: 35rpx;
+}
+
+.weixin{
+    border-radius: 100rpx;
+    background-color: #13bf52;
+    color: white;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+    padding: 15rpx;
+    font-size: 40rpx;
+}
+.weixin>image{width: 1.2em;height: 1em;position: relative;top: 4rpx;}

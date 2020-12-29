@@ -1,2 +1,11 @@
 <!--pages/i/i.wxml-->
-<text>pages/i/i.wxml</text>
+<view class="i_bg">
+    <image src="../../images/icons/game.png"></image>
+</view>
+<view  class="logon">
+
+</view>
+<view class="weixin">
+    <image src="../../images/icons/weixin.png"/>
+    微信登录
+</view>

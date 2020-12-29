@@ -1,11 +1,11 @@
 {
     "pages": [
+        "pages/i/i",
         "pages/index/index",
         "pages/find/find",
         "pages/find/search/search",
         "pages/forum/forum",
-        "pages/hot/hot",
-        "pages/i/i"
+        "pages/hot/hot"
     ],
     "window": {
         "navigationBarBackgroundColor": "#14B9C8",

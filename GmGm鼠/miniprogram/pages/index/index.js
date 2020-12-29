@@ -5,7 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        top_nav:0,Total_height:0,
+        top_nav:0,home_page_height:0,information_height:0,
         Top_Carousel:[// 顶部轮播-数据
             {text0:"版本更新",bg_img:"https://img.tapimg.com/market/images/2757bd82ee5fd01da9d4da2814339d93.jpg?imageView2/0/w/1080/h/9999/q/80/format/jpg/interlace/1/ignore-error/1",imgsm:"https://img.tapimg.com/market/lcs/8a063c4cfcc81a1ac1bb977bfa5fe2d4_360.png?imageMogr2/auto-orient/strip",text1:"使命召唤手游",text2:"迎接使命，纵横战场，《使命召唤手游》12月25日正式上线！点击详情页下载按钮安装，即可登录体验游戏",people:2020,score:8.7},
             {text0:"编辑推荐",bg_img:"https://img.tapimg.com/market/images/2917bbd8fd5c472e6c37e795d8e83678.png?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1",imgsm:"https://img.tapimg.com/market/lcs/ec3eb782198d4426da347854d65f0c7a_360.png?imageMogr2/auto-orient/strip",text1:"Phigros",text2:"Pigeon Games是由初创通过bilibili视频网站发起的、由众多节奏类游戏爱好者组成的完全用爱发电的项目组。我们希望Phigros新颖的游戏模式和精心制作的插画与关卡可以让你感受到节奏类游戏的魅力。",people:2020,score:8.7},
@@ -88,6 +88,48 @@ Page({
             ],
             // 等等
         },
+        // <!-- 首页-咨讯-数据 -->
+        information:{
+            lg:[
+                {to:"",isVideo:0,information:"[咨讯] 《古今江湖》大版本于12月29日正式上架！全新玩法",img:"https://img.tapimg.com/market/images/9bb9f152e09aa82ec037a92c97fb67b1.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 非常重大的更新，重新设计了游戏的视觉样式。新加入",img:"https://img.tapimg.com/market/images/6b2e292b1cd26dd37fac0f401390a345.png?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 《开心水族箱》，最热门最有爱的休闲养鱼互动游戏！",img:"https://img2.tapimg.com/bbcode/images/b37c27d3a52a5dee19eb6d93e20799ef.png?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 这里没有城市，没有家，不存在秩序，也不存在美好与善良",img:"https://img.tapimg.com/market/images/fc6fd5269571d6d7f76e8fd7d95db37d.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 九月份，江湖上线刚好一个月整，在这里打算与大家继续聊聊江湖后续的一些计划和安排。",subtitle:"下一站江湖Ⅰ",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/7c57406f18fa9854549f87918371cff2.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双！",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线多福利、多款节日限定时装等你来玩噢！",img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+            ],
+            sm:[
+                {to:"",isVideo:0,information:"[咨讯] 《古今江湖》大版本于12月29日正式上架！全新玩法“巅峰秘境”（非pvp）、新觉醒武侠“东方姑娘”、新流派“万针流”将来袭~",subtitle:"古今江湖",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/9bb9f152e09aa82ec037a92c97fb67b1.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 非常重大的更新，重新设计了游戏的视觉样式。新加入了两组关卡(替换了19到24关, 总数还是70关)。可以在过关后查看解法，便于分享。",subtitle:"按钮之谜",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/6b2e292b1cd26dd37fac0f401390a345.png?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 《开心水族箱》，最热门最有爱的休闲养鱼互动游戏！全球累计超6000万用户的共同选择！【鱼儿种类丰富，外形可人】",subtitle:"开心水族箱",watch:32306,comment:160,img:"https://img2.tapimg.com/bbcode/images/b37c27d3a52a5dee19eb6d93e20799ef.png?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 这里没有城市，没有家，不存在秩序，也不存在美好与善良，甚至连人类都所剩无几。有的只是将万丈高楼围的水泄不通的丧尸、比人类还要高大强壮的昆虫以及废墟前十几米高的熊熊烈焰。在这个病毒肆虐，末日来临的丧尸世界，失去了法律的约束，没有了道德的枷锁，死亡与危险将常伴身侧，杀戮无处不在。",subtitle:"阿瑞斯病毒",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/fc6fd5269571d6d7f76e8fd7d95db37d.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 九月份，江湖上线刚好一个月整，在这里打算与大家继续聊聊江湖后续的一些计划和安排。",subtitle:"下一站江湖Ⅰ",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/7c57406f18fa9854549f87918371cff2.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:1,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+                {to:"",isVideo:0,information:"[咨讯] 开放职业进阶和新队友出战位，全新商店兑换系统'诸神降临'活动上线，多款双旦定制家具和主题家园装扮上新。还有丰富的双旦主题活动、超多福利、多款节日限定时装等你来玩噢！",subtitle:"伊洛纳 (elona)",watch:32306,comment:160,img:"https://img.tapimg.com/market/images/713d3a77df2d9fdc3d5912123f0025b7.jpg?imageView2/2/h/560/w/9999/q/80/format/jpg/interlace/1/ignore-error/1"},
+            ]
+        }
     },
     Top_nav_actv0(){this.setData({top_nav:0})},
     Top_nav_actv1(){this.setData({top_nav:1})},
@@ -113,9 +155,18 @@ Page({
         query.selectAll('.h3').boundingClientRect();
         query.selectAll('.h4').boundingClientRect();
         query.exec((h) => {
-            var Total_height = (h[0].length*364+h[1].length*216+h[2].length*242+h[3].length*231+h[4].length*170)*2;
-            this.setData({Total_height:Total_height});
+            var home_page_height = (
+                h[0].length*h[0][0].height
+                +h[1].length*h[1][0].height
+                +h[2].length*h[2][0].height
+                +h[3].length*h[3][0].height
+                +h[4].length*h[4][0].height
+            )*2
+            this.setData({home_page_height:home_page_height});
         })
+        // 咨讯页高度
+        let information_height=(Math.round(this.data.information.sm.length/8)*175+this.data.information.sm.length*105)*2;
+        this.setData({information_height:information_height});
     },
 
     /**

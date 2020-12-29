@@ -1,7 +1,8 @@
 <!-- 隂陽G.M专用web速查手册 -->
 <!-- 2020/12/4 -->
 administrator
-
+问题：滑动屏幕后咨询页滚动条不置顶
+首页高度问题用...+h[1].length*h[1][0].height...解决
 <!-- GmGm鼠GitHub --><!-- https://github.com/QQ1968115437/GmGm.git -->
 
 <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> 标签小图标 -->
@@ -43,10 +44,11 @@ administrator
 
 <1>
     <!-- Vue客户端 -->
+    vue create 项目名
     npm run build 进行打包
     npm run serve 进行热编译
     json-server --watch --port 8000 json_server.json
-
+    
     npm install -g typescript     <!-- JavaScript的超集 -->
     npm install uuid --save
     <!-- 资源唯一标识符 -->
@@ -502,6 +504,8 @@ administrator
     <!-- 运行应用 -->
     ng g c my03
     <!-- 快速创建组件4文件 -->
+
+    <!-- 生成项目包 -->     ng n 包名
 
     插件
     johnpapa.angular2
