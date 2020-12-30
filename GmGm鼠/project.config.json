@@ -38,10 +38,11 @@
         "minifyWXSS": true
     },
     "appid": "wx4c4799235856a218",
-    "projectname": "GmGm",
+    "projectname": "GmGm%E9%BC%A0",
     "libVersion": "2.14.1",
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {
             "list": []

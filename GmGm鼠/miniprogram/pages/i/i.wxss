@@ -1,22 +1,43 @@
 /* pages/i/i.wxss */
-.i_bg{height: 320rpx;background-color: #14b9c8;text-align: center;}
-.i_bg>image{width: 60%;height: 120%;position: relative;top: -20rpx;}
+.main{height: 100vh;}
+.main,.middle,.logon{display: flex;flex-direction: column;justify-content: center;}
 
+.i_bg{height: 30%;background-color: #14b9c8;text-align: center;position: relative;}
+.i_bg>image:nth-child(1){width: 60%;height: 120%;position: relative;top: -20rpx;}
+.i_bg>image:nth-child(2){width: 80rpx;height: 50rpx;position: absolute;bottom: 0rpx;right: 40rpx;}
+
+.middle{height: 70%;}
 .logon{
-    height: 600rpx;
+    height: 78%;
     border-radius: 40rpx;
     box-shadow: 0 0 10rpx #e2e2e2;
     margin: 35rpx;
+    padding: 40rpx;
+    text-align: center;
+    position: relative;
 }
-
-.weixin{
+.logon>text{font-size: 50rpx;font-weight: bold;}
+.logon input,.logon button{background-color: #f6f7f9;border-radius: 50rpx;width: 50%;margin: 40rpx auto;padding: 25rpx 100rpx;}
+.logon button{color: white;margin-top: 60rpx;background-color: #14b9c8e0;}
+.place-holder{color: #c7c7c7;}
+.register{position: absolute;top: -50rpx;right: 0;border-radius: 45% 10rpx 10rpx 45% !important;box-shadow: 0 0 20rpx #5bbfe6c5;}
+.logon>view>view{position: relative;}
+.logon>view>view>view{width: 12rpx;height: 12rpx;position: absolute;top: 45%;left: 14%;border-radius: 50%;background-color: #14b9c899;box-shadow: 0 0 30rpx #14b9c8;}
+.logon>view text{color: #bf13139c;position: absolute;bottom: -35rpx;left: 22%;font-size: 20rpx;}
+.weixin,.weixin2{
+    width: 60%;
+    padding: 15rpx;
+    margin: 0 auto 50rpx;
     border-radius: 100rpx;
     background-color: #13bf52;
     color: white;
-    width: 60%;
-    margin: auto;
     text-align: center;
-    padding: 15rpx;
     font-size: 40rpx;
 }
 .weixin>image{width: 1.2em;height: 1em;position: relative;top: 4rpx;}
+.weixin2{background-color: #14b9c8}
+
+/* 正确· */
+.correct{background-color: #13bf5299 !important;box-shadow: 0 0 30rpx #13bf52;}
+/* 错误· */
+.error{background-color: #bf131399 !important;box-shadow: 0 0 30rpx #bf1313;}

@@ -1,11 +1,43 @@
 <!--pages/i/i.wxml-->
-<view class="i_bg">
-    <image src="../../images/icons/game.png"></image>
-</view>
-<view  class="logon">
-
-</view>
-<view class="weixin">
-    <image src="../../images/icons/weixin.png"/>
-    微信登录
+<view class="main">
+    <view class="i_bg">
+        <image src="../../images/icons/game.png"></image>
+        <image src="../../images/icons/mouse.png"></image>
+    </view>
+    <view class="middle">
+        <view class="logon">
+            <text>GmGm账号{{isRegister==0?'登陆':'注册'}}</text>
+            <view>
+                <block wx:if="{{isRegister==0}}">
+                    <view>
+                        <input placeholder-class="place-holder" type="text" placeholder="请输入账号/手机号" bindinput="account_number"/><view class="{{account_number==0?'':account_number==1?'correct':'error'}}"/>
+                    </view>
+                    <view>
+                        <input placeholder-class="place-holder" type="password" placeholder="请输入密码" bindinput="password"/><view class="{{password==0?'':password==1?'correct':'error'}}"/>
+                    </view>
+                    <button>立即登录</button>
+                </block>
+                <block wx:else>
+                    <view>
+                        <input placeholder-class="place-holder" type="text" placeholder="请输入账号" bindinput="account_number"/><view class="{{account_number==0?'':account_number==1?'correct':'error'}}"/>
+                        <text wx:if="{{isPrompt!=0}}">用户名至少3位</text>
+                    </view>
+                    <view>
+                        <input placeholder-class="place-holder" type="password" placeholder="请输入密码" bindinput="password"/><view class="{{password==0?'':password==1?'correct':'error'}}"/>
+                        <text wx:if="{{isPrompt!=0}}">密码至少6位,并且包含一个字母和数字</text>
+                    </view>
+                    <view>
+                        <input placeholder-class="place-holder" type="password" placeholder="请确认密码" bindinput="again_password"/><view class="{{again_password==0?'':again_password==1?'correct':'error'}}"/>
+                    </view>
+                </block>
+                <button size="mini" class="register" bindtap="click_Register">{{isRegister!=0?'登陆':'注册'}}</button>
+            </view>
+        </view>
+    
+        <view class="weixin"  wx:if="{{isRegister==0}}">
+            <image src="../../images/icons/weixin.png"/>
+            微信登录
+        </view>
+        <view class="weixin2" wx:else>立即注册</view>
+    </view>
 </view>
