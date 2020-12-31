@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "component-special": "../../components/special/special",
+    "component-Card_wall": "../../components/Card_wall/Card_wall"
+  }
+}

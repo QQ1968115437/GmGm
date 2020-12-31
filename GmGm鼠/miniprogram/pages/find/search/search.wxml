@@ -1,0 +1,13 @@
+<!--pages/find/search/search.wxml-->
+<!-- 搜索框*************始 -->
+<view class="search">
+    <input type="text" placeholder="搜索" />
+
+    <view class="hot-search">
+        <text>热门搜索</text>
+        <view>
+            <view wx:for="{{hot_search_text}}" wx:key="index"> <text class="hot-search-text">{{index+1}}</text> <text>{{item}}</text> </view>
+        </view>
+    </view>
+</view>
+<!-- 搜索框*************终 -->

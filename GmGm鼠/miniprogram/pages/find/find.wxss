@@ -1,0 +1,4 @@
+/* pages/find/find.wxss */
+.search{height: 90rpx;background-color: #f1f1f1;display: flex;align-items: center;justify-content: center;}
+.search>navigator{height: 75%;width: 90%;background-color: #e8e8e8;text-align: center;border-radius: 40rpx;font-size: 30rpx;color: #717171;line-height: 67.5rpx;}
+.search image{width: 20rpx;height: 20rpx;}

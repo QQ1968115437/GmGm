@@ -1,0 +1,25 @@
+<!--components/special/special.wxml-->
+<!-- 首页-专题-组件 -->
+<!-- 首页-编辑推荐，版本更新，同用组件 -->
+<view class="special">
+    <text class="t1">{{innerHead==1?"版本更新":innerHead==2?"编辑推荐":"来自专题"}}</text>
+    <image class="i1" src="{{innerImg}}"/>
+    <text wx:if="{{innerHead==0?true:false}}" class="t3">{{innerText}}</text>
+    
+    <view wx:if="{{innerHead!=0?true:false}}" class="special-view">
+        <view>
+            <image src="{{innerImgsm}}" alt="" class="special-view01"/>
+        </view>
+        <view class="special-view02">
+            <view class="special-view03">{{innerText1}}</view>
+            <text>{{innerText2}}</text>
+        </view>
+        <view class="special-view04">
+            <text>{{innerPeople}}人评分</text>
+            <view class="special-view05">
+                <image src="../../images/icons/stars_circle.png" class="special-view06"/>
+                <text>{{innerScore}}</text>
+            </view>
+        </view>
+    </view>
+</view>
