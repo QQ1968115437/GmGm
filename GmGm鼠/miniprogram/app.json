@@ -5,8 +5,7 @@
         "pages/find/find",
         "pages/find/search/search",
         "pages/forum/forum",
-        "pages/hot/hot",
-        "pages/i/user_pages/user_pages"
+        "pages/hot/hot"
     ],
     "window": {
         "navigationBarBackgroundColor": "#14B9C8",
