@@ -1,0 +1,800 @@
+<!-- 隂陽G.M专用web速查手册 -->
+<!-- 2020/12/4 -->
+administrator
+问题：滑动屏幕后咨询页滚动条不置顶,咨讯页自适应高度无法解决
+首页高度问题用...+h[1].length*h[1][0].height...解决
+<!-- GmGm鼠GitHub --><!-- https://github.com/QQ1968115437/GmGm.git -->
+
+<!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> 标签小图标 -->
+<0>
+    <!-- 目录: -->
+    <1>
+        <!-- Vue客户端 -->
+        <2>
+            <!-- Node服务器端 -->
+            <3>
+                <!-- css类 -->
+                <4>
+                    <!-- 网址类 -->
+                    <5>
+                        <!-- mysql类 -->
+                        <6>
+                            <!-- Mint-ui类 -->
+                            <7>
+                                <!-- Json-server -->
+                                <8>
+                                    <!-- webpack -->
+                                    <9>
+                                        <!-- Web Worker创建js多线程 -->
+                                        <10>
+                                            <!-- SVG -->
+                                            <11>
+                                                <!-- ECharts图表库 -->
+                                                <100>
+                                                    <!-- Git类 -->
+                                                    <101>
+                                                        <!-- 数据储存 WebStorage-->
+                                                        <102>
+                                                            <!-- 音频与视频-->
+                                                            <103>
+                                                                <!-- JS绘制图形-canvas -->
+                                                                <105>
+                                                                    <!-- 拖放事件 -->
+</0>
+
+<1>
+    <!-- Vue客户端 -->
+    vue create 项目名
+    npm run build 进行打包
+    npm run serve 进行热编译
+    json-server --watch --port 8000 json_server.json
+
+    npm install -g typescript     <!-- JavaScript的超集 -->
+    npm install uuid --save
+    <!-- 资源唯一标识符 -->
+    npm install -g json-server
+    <!-- 安装全局的json-server -->
+    npm i -g @vue/cli
+    <!-- 脚手架工具 -->
+    npm install axios --save
+    <!-- 基于promise的HTTP库 -->
+    npm install vue-router --save
+    <!-- vue路由器动态路由 -->
+    npm install mint-ui --save
+    <!-- Mint UI组件库 -->
+    npm install moment --save
+    <!-- JavaScript 日期处理类库 http://momentjs.cn/ -->
+    npm install qs --save
+    <!-- 对象转成请求字符串 -->
+    npm install vuex --save
+    <!-- 状态管理 -->
+    <li>
+        <!-- 示例 -->
+        main.js中:
+        import axios from "axios"
+        import store from './store'
+        import qs from "qs"
+        import moment from 'moment'
+        import MintUI from 'mint-ui'
+        import 'mint-ui/lib/style.min.css'
+        Vue.prototype.axios=axios;
+        Vue.prototype.qs=qs;
+        Vue.prototype.moment=moment;
+        Vue.use(MintUI)
+        axios.defaults.baseURL="http://localhost:8000"
+
+        new Vue({
+        router,store,
+        render: h => h(App)
+        }).$mount('#app')
+
+        store>index.js中:
+        import Vue from 'vue'
+        import Vuex from 'vuex'
+        import axios from 'axios'
+        Vue.use(Vuex);
+        export default new Vuex.Store({
+        state:{},
+        mutations:{},
+        actions:{}
+        })
+
+        router>index.js中:
+        import VueRouter from 'vue-router'
+        Vue.use(VueRouter)
+        const routes = [{path:,name:,component:}]
+        const router = new VueRouter({routes})
+        export default router
+
+        moment:
+        发表于：{{moment(m.created_at).format('YYYY年MM月DD日HH:mm:ss')}}
+    </li>
+</1>
+
+<2>
+    <!-- Node服务器端 -->
+    npm install express
+    <!-- express模块 (4.5版本以上已有body-parser中间件) -->
+    npm install cors
+    <!-- cors跨域模块 -->
+    npm install mysql
+    <!-- mysql数据库模块 -->
+    <li>
+        <!-- 示例 -->
+        服务器js:
+        const express=require("express");
+        const bodyParser=require("body-parser")
+        const cors=require("cors");
+        const mysql=require("mysql");
+        const app=express();
+        app.listen(8000);
+
+        const pool=mysql.createPool({
+        host:"127.0.0.1",
+        port:3306,
+        user:"root",
+        password:"",
+        database:"xzqa",
+        connectionLimit:20
+        });
+        app.use(bodyParser.urlencoded({
+        extended:false
+        }));
+        app.use(cors({
+        origin:['http://127.0.0.1:8080','http://localhost:8080']
+        }));
+        app.get("/aaa",(a,b)=>{
+        let sql="select id,category_name from xzqa_category";
+        pool.query(sql,(aa,bb)=>{
+        if(aa){};
+        b.send({code:200,message:"查询成功",bb:bb});
+        })
+        });
+    </li>
+</2>
+
+<3>
+    <!-- css类 -->
+    npm install reset-css
+    <!-- 浏览器样式重置reset.css(提出css) -->
+    https://www.bootcss.com/
+    <!-- Bootstrap4下载 -->
+    <li>
+        <!-- 示例 -->
+        index.html头部引入:
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+    </li>
+</3>
+
+<4>
+    <!-- 网址类 -->
+    https://c.runoob.com/
+    <!-- 菜鸟工具 -->
+    https://www.iconfinder.com/
+    <!-- svg图 -->
+    https://map.baidu.com/
+    <!-- 百度地图 -->
+    https://www.iconfont.cn/
+    <!-- 阿里巴巴矢量图标库 -->
+    https://fontawesome.dashgame.com/
+    <!-- Font Awesome矢量图标库 -->
+    https://www.bootcss.com/
+    <!-- Bootstrap框架 -->
+    https://animate.style/
+    <!-- Animate.css -->
+    https://tool.oschina.net/
+    <!-- 在线工具 -->
+    https://www.php.cn/xiazai/tool/17
+    <!-- php中文网工具箱 -->
+    https://developer.mozilla.org/zh-CN/
+    <!-- MDN web docs -->
+    https://www.webpackjs.com/
+    <!-- webpack -->
+
+</4>
+
+<5>
+    <!-- mysql类 -->
+    MD5()
+    <!-- MD5加密 -->
+    set password=password("新密码")
+    <!-- password加密改密 -->
+    SELECT COUNT(id) AS count FROM xzqa_author WHERE user name=?
+    <!-- 查询用户是否存在 -->
+    INSERT INTO xzqa_author(username,password) VA LUES(?,MD5(?))
+    <!-- 用户名，MD5密码插入 -->
+    SELECT id,username FROM xzqa_author WHERE username=? AND password=MD5(?)
+    <!-- 以用户名,密码为条件进行查找 -->
+    SELECT r.id,subject,content,created_at,nickname,avatar,article_number FROM xzqa_article AS r INNER JOIN xzqa_author
+    AS u ON author_id=u.id WHERE r.id=?
+    <!-- 多表查询 -->
+    <li>
+        <!-- 示例 -->
+        创建数据库:
+        SET NAMES UTF8;
+        <!-- #设置客户端连接服务器端编码 或SET NAMES JBK;-->
+        DROP DATABASE IF EXISTS tedu;
+        <!-- #丢弃数据库，如果存在 -->
+        CREATE DATABASE tedu CHARSET=UTF8;
+        <!-- #创建数据库，设置存储的编码 -->
+        USE tedu;
+        <!-- #进入数据库 -->
+        CREATE TABLE emp(
+        <!-- #创建保存员工数据的表 -->
+        eid INT PRIMARY KEY AUTO_INCREMENT,
+        ename VARCHAR(16) NOT NULL,
+        sex BOOLEAN DEFAULT 1,
+        <!-- #1-男  0-女 -->
+        birthday DATE,
+        salary DECIMAL(7,2),
+        <!-- #99999.99 -->
+        deptId INT,
+        FOREIGN KEY(deptId) REFERENCES dept(did)
+        );
+        INSERT INTO emp VALUES(NULL,'gongjinglong',1,'1990-5-5',6000,20);
+        <!-- #插入数据 -->
+
+        数据库:
+        +-----------------+------------------+---------------+-------------+-----------------+----------------+--------------------+
+        | Field(字段名称) | Type(数据类型) | Null(是否为空) | Key(键) | Default(默认值) | Extra(额外) | Explain(说明) |
+        +-----------------+------------------+---------------+-------------+-----------------+----------------+--------------------+
+        | id | int(8) unsigned | NO | primary key | NULL | auto_increment | 用户ID |
+        | username | varchar(30) | NO | unique | NULL | | 用户名 |
+        | password | varchar(32) | NO | | NULL | | 用户密码(采用MD5) |
+        | nickname | varchar(30) | YES | | NULL | | 用户昵称 |
+        | avatar | varchar(50) | NO | | unnamed.jpg | | 用户头像 |
+        | gender | bool | NO | | 0 | | 用户性别 |
+        | article_number | mediumint(9) | NO | | 0 | | 用户发表的文章数量 |
+        +-----------------+------------------+---------------+-------------+-----------------+----------------+--------------------+
+    </li>
+</5>
+
+<6>
+    <!-- Mint-ui类 -->
+    $messagebox("注册提示","对不起,用户已存在")
+    <!-- 模态框 -->
+</6>
+
+<7>
+    <!-- Json-server -->
+    npm install -g json-server
+    <!-- 安装全局的json-server -->
+
+    json-server --watch --port 8000 json_server.json
+
+    http://localhost:8000/users
+    <!-- //获取所有用户信息 -->
+
+    http://localhost:8000/users/1
+    <!-- //获取id为1的用户信息 -->
+
+    http://localhost:8000/companies
+    <!-- //获取公司的所有信息 -->
+
+    http://localhost:8000/companies/1
+    <!-- //获取单个公司的信息 -->
+
+    http://localhost:8000/companies/3/users
+    <!-- //获取所有公司id为3的用户 -->
+
+    http://localhost:8000/companies?name=Google
+    <!-- //根据公司名字获取信息 -->
+
+    http://localhost:8000/companies?name=Google&name=Apple
+    <!-- //根据多个名字获取公司信息 -->
+
+    http://localhost:8000/companies?_page=1&_limit=2
+    <!-- //获取一页中只有两条数据 -->
+
+    http://localhost:8000/companies?_sort=name&_order=asc
+    <!-- //升序排序  desc降序  asc升序 -->
+
+    http://localhost:8000/users?age_gte=30
+    <!-- //获取年龄为30以及30以上的 -->
+
+    http://localhost:8000/users?age_gte=30&age_gte=40
+    <!-- //获取年龄为30到40之间的 -->
+
+    http://localhost:8000/users?q=d
+    <!-- //搜索用户信息 -->
+
+    知识点总结如下：
+    1、http://localhost:3000/db 访问的是db.json文件下的所有内容；
+    2、http://localhost:3000/layoutList?categoryName= 模拟接口参数可筛选该目录下内容
+    3、分页查询 参数为 _start, _end, _limit，并可添加其它参数筛选条件
+    如：http://localhost:3000/posts?_start=6&_limit=3
+    http://localhost:3000/posts?_start=3&_end=6
+    4、排序 参数为_sort, _order
+    如：http://localhost:3000/posts?_sort=id&_order=asc
+    http://localhost:3000/posts?_sort=user,views&_order=desc,asc
+    5、操作符 _gte, _lte, _ne, _like
+    _gte大于，_lte小于， _ne非， _like模糊查询
+    6、q全局搜索（模糊查询）
+</7>
+
+<8>
+    <!-- webpack -->
+    运行在Nodejs中
+    核心概念：
+    (0)mode：运行模式，可以指定为production或者development
+    (1)entry：入口，指定资源包的入口文件
+    (2)output：输出，指定最终输出的资源包文件
+    (3)loader：加载器，让Webpack可以处理非JS文件，如CSS/图片等
+    (4)plugin：插件，可以进一步扩展Webpack本身的功能
+
+    使用过程：
+    (1)创建客户端项目，编写HTML/CSS/JS/图片等文件
+    (2)创建项目的描述文件：package.json
+    npm init
+    (3)下载webpack及其依赖的模块，并添加为当前项目的“开发阶段依赖模块”
+    npm i webpack --save-dev
+    npm i webpack-cli --save-dev
+    (4)创建webpack主配置文件： webpack.config.js
+    module.exports = {
+    mode: 'production',
+    entry: './public/src/js/index.js',
+    output: {
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
+    },
+    module: { },
+    plugins: [ ]
+    }
+    (5)运行webpack，根据主配置文件对静态资源进行打包
+    node ./node_modules/webpack/bin/webpack.js
+    或者配置为scripts： "build": "webpack"，用 npm run build方式运行
+
+    module.exports= function getCompanyName(){
+    return 'TEDU.CN';
+    }
+    import getCompanyName from "./util"
+</8>
+
+<9>
+    <!-- Web Worker创建js多线程 -->
+    new Worker("./wc.js");
+    postMessage(shu);
+    onmessage
+</9>
+
+<10>
+    <!-- SVG -->
+    https://c.runoob.com/more/svgeditor/
+    <!-- svg编辑器 -->
+
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="宽度" height="高度">...</svg>
+    1.svg元素
+    stroke-width 属性用于设置描边的宽度
+    stroke 属性用于设置描边的颜色
+    fill 填充颜色
+    text 绘制文本 <text x="" y=""></text>
+    line 元素用于绘制线段 <line x1="起点 X 轴" y1="起点Y 轴" x2="终点 X轴" y2="终点Y 轴"></line>
+    polyline 元素用于绘制折线 <polyline points="x1,y1,x2,y2,..."></polyline>
+    circle 画圆 <circle cx="圆心x" cy="圆心y" r="半径"></circle>
+    ellipse 绘制椭圆 <ellipse cx="圆心x" cy="圆心y" rx="水平半径" ry="垂直半径"></ellipse>
+    rect 元素用于绘制(圆角)矩形 <rect x="起点的 X 轴" y="起点的 Y 轴" width="宽度" height="高度" rx="长轴半径" ry="短轴半径"></rect>
+    a 元素用于实现链接 <a xlink:href="目标文档 URL" xmlns:xlink="http://www.w3.org/1999/xlink">...</a>
+    2.SVG DOM API
+    document.createElementNS() 方法用于创建指定命名空间内的元素
+    Element document.createElementNS('命名空间','元素名称')
+    let a=document.createElementNS('http://www.w3.org/2000/svg','circle')
+    设置与获取元素属性 Element.setAttribute(name,value) Element.getAttribute(name)
+    添加/删除子元素 Node Node.appendChild(subNode) Node.removeChild(subNode)
+
+</10>
+
+<11>
+    <!-- ECharts图表库 -->
+    https://echarts.apache.org/zh/index.html
+    https://echarts.apache.org/zh/tutorial.html#5%20%E5%88%86%E9%92%9F%E4%B8%8A%E6%89%8B%20ECharts
+
+    npm install --save echarts
+    A.在 HTML 页面中创建 DIV 元素，该 DIV 将作为图表渲染容器出现，必须为该 DIV元素设置明确的宽度和高度
+    B.书写 script 标签，并且调用 echarts 对象的 init()方法以完成图表实例的 创建，init()方法的语法结构建如下：
+    C.通过图表实例的 setOption()方法实现实例的配置
+    instance.setOption({...})
+
+    var a = echarts.init(document.getElementById('a001'), 'vintage');
+    var b={
+    title: {
+    text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+    data:['销量']
+    },
+    xAxis: {
+    data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    },
+    yAxis: {},
+    series: [{
+    name: '销量',
+    type: 'bar',
+    data: [5, 20, 36, 10, 10, 20]
+    }]
+    }
+    a.setOption(b);
+
+    1. 配置项
+    title组件用于控制标题信息
+    title:{ show:是否显示标题信息(true|false),
+    text:'控制主标题文本信息',
+    link:'控制主标题的链接 URL 地址',
+    target:'控制打开主标题链接的窗口形式(blank|self)',
+    // 控 制 主 标 题 文 本 的 样 式
+    textStyle:{ color:'主标题文本颜色',
+    fontSize:主标题文本字号(整数),
+    fontFamily:'主标题文本字体',
+    fontWeight:'主标题文本的加粗(normal|bold)',
+    fontStyle:'主标题文本的倾斜(normal|italic)' },
+    subtext:'副标题的文本信息',
+    sublink:'控制副标题的链接 URL 地址',
+    subtarget:'控制打开副标题链接的窗口形式(blank|self)',
+    top:'title 组件离容器上侧的距离'(数字或字符串 top|middle|bottom),
+    right:
+    bottom:
+    left:'title 组件离容器左侧的距离'(数字或字符串 left|center|right)
+    }
+    xAxis属性用于控制 X 轴信息 yAxis属性用于控制 Y 轴信息
+    xAxis:{
+    show:是否显示 X 轴(true|false),
+    type:'X 轴的类型(category|time)',
+    data:该属性在 type 属性为 category 时必须存在,数组类型
+    }
+    series 属性用于控制图表系列
+    series:[
+    {
+    type:'系列的名称(line|bar|pie)',
+    data:系列的数据(数组·)
+    },
+    {
+    type:'系列的名称(line|bar|pie)',
+    data:系列的数据(数组·)
+    }
+    ]
+</11>
+
+<12>
+    <!-- 微信小程序 -->
+    getApp() 获取app对象
+    getApp().globalData.xxx 获取全局数据
+    组件wxss中不应使用ID选择器、属性选择器和标签名选择器
+    
+    "pages"属性用于指定小程序中的页面组成，而且数组中的 第一项将作为首页显示。
+
+    • .json，静态配置文件
+    – app.json,整个项目的全局配置文件
+    – page.json,每个页面专有的配置文件，如 index.json
+    • .js/.ts,脚本文件
+    – app.js,整个项目的入口脚本文件
+    – page.js，每个页面专有的脚本文件
+    • .wxml,页面的模板文件(不能使用任何的 HTML 标签，只能使用小程序专有的标签 )
+    • wxss,页面的样式文件
+    – app.wxss，整个项目的样式文件
+    – page.wxss，每个页面专用的样式文件
+    app.json、app.wxss、app.js 必须位于小程序的根目录下。
+
+    <button size="mini" type="warn" bindtap="shan" data-index="{{index}}">删除</button> data-收集数据传回到逻辑层
+
+    <block> 包装元素，不会在页面中做任何渲染，只接受控制属性 wx:if/wx:for
+
+        <!-- 消息提示框中函数中this指向问题：箭头函数解 -->
+        wx.showModal({
+        title: '提示',
+        content: '！！！是否删除 ！！！',
+        success: (res)=>{
+        if (res.confirm) {
+        console.log('用户点击确定')
+        wen.splice(index,1);
+        this.setData({wen:wen});
+        }
+        }
+        })
+        <!-- ************** -->
+</12>
+
+<13>
+    <!-- Angular -->
+    npm install -g @angular/cli
+    <!-- 安装 Angular CLI -->
+    ng new my-app
+    <!-- 创建工作空间和初始应用 -->
+    ng serve --open
+    <!-- 运行应用 -->
+    ng g c my03
+    <!-- 快速创建组件4文件 -->
+
+    <!-- 生成项目包 -->     ng n 包名
+
+    插件
+    johnpapa.angular2
+    angular.ng-template
+    octref.vetur
+    hollowtree.vue-snippets
+    ritwickdey.liveserver
+    ms-ceintl.vscode-language-pack-zh-hans
+
+    vscode-icons-team.vscode-icons
+    kisstkondoros.vscode-gutter-preview
+    christian-kohler.path-intellisense
+    esbenp.prettier-vscode
+    albert.tabout
+    formulahendry.auto-rename-tag
+
+
+</13>
+
+<100>
+    <!-- 推送 -->
+    git commit -m '提交说明'
+    git remote add origin https://github.com/QQ1968115437/GmGm.git
+    git push -u origin master
+    <!-- Git类 -->
+    ---------------------------------------------------------------------
+    配置
+    ------------------------
+
+    # #注释
+    git config --global user.name "QQ1968115437" #定义用户名
+    git config --global user.email "1968115437@qq.com" #定义邮箱
+
+    git config --list #查看配置信息列表
+
+    clear #清屏
+
+    q #退出当前操作
+
+    ---------------------------------------------------------------------
+    创建git仓库
+
+    本地操作空间-->本地仓库
+    ------------------------
+
+    git init #把当前文件夹变成git仓库
+
+    git status #查看本地操作空间状态
+
+    git add 666.html #将此文件存入暂存区
+
+    git add . #将所有文件存入暂存区
+
+    git commit -m 第一次提交的git #将暂存区文件存入本地仓库+提交说明
+
+    ----------------------------------------------------------------------
+    本地仓库-->本地操作空间
+    --------------------------
+
+    git log #查看当前版本之前的所有版本号（回滚后之后版本看不见）
+
+    git reflog #查看所有版本号(用)
+
+    git reset --hard 941ce01804666006d2d637464de #回滚到该版本文件+版本号ID
+
+    ----------------------------------------------------------------------
+    暂存区-->本地操作空间
+    --------------------------
+
+    git checkout 666.html #把暂存区回滚某个文件覆盖到本地
+
+    ----------------------------------------------------------------------
+    分支
+    ------------------------
+
+    主干master
+
+    git branch #查看当前所有分支，并提示当前分支所处位置
+
+    git branch usercol #创建分支-usercol用户模块
+
+    git branch procol #创建分支-procol商品模块
+
+    git checkout 分支名 #切换到usercol分支上
+
+    git merge 分支名 #合并分支
+
+    git branch -d 分支名 #普通删除分支
+
+    git branch -D 分支名 #强行删除未合并的分支
+
+    ---------------------------------------------------------------------
+    附
+    ------------------------
+    文件下载
+    git clone 仓库地址 #创建新的文件夹
+    git pull 仓库地址 #覆盖git仓库,使用pull拉取网络仓库
+
+    操作项目文件夹中开启Git Bash Here
+    .git 本地仓库
+    .git 下面为本地操作空间
+
+    git仓库=[本地操作空间，暂存区(内存)，本地仓库]-->网络仓库[GitHub]
+
+    ----------------------------------------------------------------------
+</100>
+
+<101>
+    <!-- 数据储存 WebStorage-->
+    Webstorage 数据存储,其以名/值对的形 式进行存储
+    sessionStorage,仅在浏览器窗口打开期间有效(会话储存)
+    localStorage,其永远有效(本地储存)
+    length 属性 用于获取项目的数量
+    setItem()方法用于设置存储项目
+    getItem()用于获取项目的值
+    removeItem()方法用于删除项目
+    clear()方法用于删除所有项目
+
+    可以存JSON把对象转字符串:JSON.stringify(res.data.name)
+</101>
+
+<102>
+    <!-- 音频与视频-->
+    视频格式 mp4、webm、ogg
+    <video src="视频文件 URL 地址" width="宽度" height="高度"> 浏览器不支持视频的提示文本 </video>
+    <video width="宽度" height="高度">
+        <source src="视频文件 URL 地址" type="video/webm" /> ... 浏览器不支持视频的提示文本
+    </video>
+    视频属性
+    controls,布尔属性，用于控制是否显示视频播放控件
+    autoplay,布尔属性，用于控制是否自动播放视频(需与 muted 属性组合使用)
+    muted,布尔属性，用于控制视频是否静音播放
+    loop,布尔属性，用于控制视频是否循环播放
+    poster,海报帧的 URL
+    preload,控制视频的预载入方式 :
+    auto,浏览器尽可能的下载视频文件(播放流畅，但会造成网络流量的浪费)
+    none,不缓存视频，尽可能的减少流量的浪费
+    metadata,只加载视频的时长、宽度、高度等信
+
+    音频格式 mp3、wav、ogg
+    <audio src="音频文件 URL"> 浏览器不支持音频的提示文本 </audio>
+    <audio>
+        <source src="音频文件 URL" type="audio/ogg" /> ... 浏览器不支持音频的提示文本
+    </audio>
+    音频属性
+    controls,布尔属性，用于控制是否显示音频播放控件
+    autoplay,布尔属性，用于控制是否自动播放音频(需与 muted 属性组合使用)
+    muted,布尔属性，用于控制音频是否静音播放
+    loop,布尔属性，用于控制音频是否循环播放
+    preload,控制音频的预载入方式
+    auto,浏览器尽可能的下载音频文件(播放流畅，但会造成网络流量的浪费)
+    none,不缓存音频，尽可能的减少流量的浪费
+    metadata,只加载音频的时长信息
+
+    JavaScript与音频和视频
+    1.HTMLVideoElement
+    width 属性用于获取/设置视频对象的宽度
+    videoWidth 属性用于获取视频对象原始宽度
+    poster 属性用于获取/设置视频的海报帧
+    2.HTMLAudioElement
+    variable = new Audio([音频文件的 URL 地址])
+    3.HTMLMediaElement
+    autoplay 属性用于获取/设置媒体对象是否自动播放
+    muted 属性用于获取/设置媒体对象在播放时是否静音
+    controls 属性用于获取/设置媒体对象在播放时是否显示播放控件
+    loop 属性用于获取/设置媒体对象是否循环播放
+    src 属性用于获取/设置媒体文件的 URL 地址
+    volume 属性用于获取/设置媒体的音量(取值范围来[0,1])
+    playbackRate 属性用于获取/设置媒体的播放速率，如果其值为 1.0，为正常 速率，如果小于 1.0则低于正常速率，否则高于正常速率
+    paused 属性用于获取媒体对象是否在暂停
+    ended 属性用于获取媒体对象是否播放完毕
+    currentTime 属性用于获取/设置媒体对象的当前播放时间(单位为秒)
+    duration 属性用于获取媒体对象的总时长(单位为秒)
+
+    方法:
+    play() 方法用于实现媒体的播放
+    pause() 方法用于实现媒体的暂停
+    事件:
+    play 事件在媒体对象播放时触发
+    HTMLMediaElement.addEventListener('play',()=>{ ... })
+    或 HTMLMediaElement.onplay = ()=>{ .... }
+    pause 事件在媒体对象暂停时触发
+    HTMLMediaElement.addEventListener('pause',()=>{ ... })
+    HTMLMediaElement.onpause = ()=>{ .... }
+    ended 事件在媒体对象播放完毕后触发
+    HTMLMediaElement.addEventListener('ended',()=>{ ... })
+    HTMLMediaElement.onended = ()=>{ .... }
+    loadeddata 事件在媒体文件的第一帧加载完成后被触发
+    HTMLMediaElement.addEventListener('loadeddata',()=>{ ... })
+    HTMLMediaElement.onloadeddata = ()=>{ .... }
+    timeupdate 事件在媒体对象的 currentTime 属性发生变化时调用
+    HTMLMediaElement.addEventListener('timeupdate',()=>{ ... })
+    HTMLMediaElement.ontimeupdate = ()=>{ .... }
+
+    全屏:
+    export default {
+    mounted () {
+    var a=document.getElementsByClassName("a1")[0];
+    a.width=200;a.height=200;
+    },
+    methods: {
+    quan(){
+    var a=document.getElementsByClassName("a1")[0];
+    if(a.requestFullscreen){a.requestFullscreen()}else
+    if(a.mozRequestFullScreen){a.mozRequestFullScreen()}else
+    if(a.webkitRequestFullscreen){a.webkitRequestFullscreen()}
+    }
+    }
+    }
+</102>
+
+<103>
+    <!-- JS绘制图形-canvas -->
+    1.HTMLCanvasElement
+    <canvas width="宽度" height="高度"></canvas>
+    getContext() 方法用于获取<canvas>元素的上下文,没有定义上下文则返回null
+        let mmm=document.getElementById("mmm");
+        let D=mmm.getContext("2d");
+        mmm.width=400;mmm.height=200;
+        2.CanvasRenderingContext2D对象
+        颜色在矩形或文本位置前一行写
+        strokeStyle 属性用于获取/设置描边颜色 D.strokeStyle = color
+        fillStyle 属性用于获取/设置填充颜色 D.fillStyle = color
+        font 属性用于获取/设置文本样式 D.font = "字号 字体"
+        textAlign 属性用于设置文本的水平对齐方式 D.textAlign = 'left|center|right'
+
+        strokeRect() 方法用于绘制描边矩形 D.strokeRect(x,y,width,height)
+        fillRect() 方法用于绘制填充矩形 D.fillRect(x,y,width,height)
+        strokeText() 方法用于绘制描边文本 D.strokeText(text,x,y)
+        fillText() 方法用于绘制填充文本 D.fillText(text,x,y)
+        clearRect() 方法用于擦除指定的矩形区域 D.clearRect(x,y,width,height)
+        beginPath() 方法用于新始一个新的路径 D.beginPath()
+        moveTo() 方法用于指定路径的起点 D.moveTo(x,y)
+        lineTo() 方法用于绘制线段 D.lineTo(x,y)
+        arc() 方法用于绘制圆弧路径 D.arc(x,y,radius,start_angle,end_angle)
+        stroke() 方法用于根据当前的描边样式来绘制路径 D.stroke()
+
+        路径(path)将预先设置的坐标点顺序连接形成的图形
+        路径的绘制步骤：
+        A.通过 ctx.beginPath()方法开始新的路径
+        B.通过 ctx.moveTo()方法指定路径的起点坐标
+        C.绘制基本路径内容(如 lineTo(),rect(),arc()方法用于绘制线段等)
+        D.通过 stroke()或 fill()方法完成路径的绘制
+        3.window对象
+        requestAnimationFrame() 方法用于在浏览器中定时循环执行一个操作
+        variable = window.requestAnimationFrame(callback)
+        cancelAnimationFrame() 方法用于清理由requestAnimationFrame()方法返回的requestId
+        window.cancelAnimationFrame(requestId)
+</103>
+
+<104>
+    <!-- 地理位置 -->
+    https://map.baidu.com/
+    Geolocation API 位于 navigator 对象
+    方法:
+    getCurrentPosition()
+    watchPosition()
+    clearWatch()
+    navigator.geolocation.getCurrentPosition(a,b,{geolocation选项})
+    参数: a:用户允许共享geolocation的回调; b:位置获取失败的回调
+    navigator.geolocation.getCurrentPosition(function(position){console.log(position.coords)})
+</104>
+
+<105>
+    <!-- 拖放事件 -->
+    dragstart 事件在源对象开始被拖放时触发 HTMLElement.ondragstart = ()=>{ }
+    drag 事件在源对象拖放过程中被触发 HTMLElement.ondrag = ()=>{ }
+    dragend事件在源对象释放后被触发 HTMLElement.ondragend = ()=>{ }
+    dragenter事件是在源对象进入目标对象的区域范围时被触发 HTMLElement.ondragenter = ()=>{ }
+    dragover事件在源对象在目标对象悬停时触发 HTMLElement.ondragover = ()=>{ event.preventDefault(); } 必须在该事件内调用
+    event.preventDefault()方法，否则不会触发 drop 事件
+    dragleave 事件在源对象拖动离开目标对象时触发 HTMLElement.ondragleave = ()=>{ }
+    drop 事件将在源对象在目标对象范围内释放时触发 HTMLElement.ondrop = ()=>{ }
+
+    拖放事件的触发顺序： dragstart-->drag-->dragenter-->dragover-->drop-->dragend
+
+    dataTransfer 属性将返回 DataTransfer对象，用于保存拖放数据
+
+    DataTransfer对象
+    setData()方法用于给指定的类型设置数据，如果类型不存在则自动添加到到 未尾，如果存在的话，则替换原来的值
+    DataTransfer.setData(type,value)
+    getData()方法用于获取指定类型的数据
+    variable = DataTransfer.getData(type)
+</105>
+
+
+<!--
+// 最终修改，正常加载
+<div>
+    <img :src="require(`../assets/${ss[1]}.svg`)" alt="" />
+</div> 
+-->

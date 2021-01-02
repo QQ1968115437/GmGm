@@ -1,0 +1,60 @@
+{
+    "pages": [
+        "pages/i/i",
+        "pages/index/index",
+        "pages/find/find",
+        "pages/find/search/search",
+        "pages/forum/forum",
+        "pages/hot/hot"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#14B9C8",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "GmGm鼠",
+        "backgroundColor": "#F1F1F1",
+        "backgroundTextStyle": "light"
+    },
+    "tabBar": {
+        "color": "#999999",
+        "selectedColor": "#14B9C8",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/icons/index1.png",
+                "selectedIconPath": "images/icons/index0.png"
+            },
+            {
+                "pagePath": "pages/find/find",
+                "text": "发现",
+                "iconPath": "images/icons/find1.png",
+                "selectedIconPath": "images/icons/find0.png"
+            },
+            {
+                "pagePath": "pages/forum/forum",
+                "text": "论坛",
+                "iconPath": "images/icons/forum1.png",
+                "selectedIconPath": "images/icons/forum0.png"
+            },
+            {
+                "pagePath": "pages/hot/hot",
+                "text": "热门",
+                "iconPath": "images/icons/hot1.png",
+                "selectedIconPath": "images/icons/hot0.png"
+            },
+            {
+                "pagePath": "pages/i/i",
+                "text": "我",
+                "iconPath": "images/icons/i1.png",
+                "selectedIconPath": "images/icons/i0.png"
+            }
+        ]
+    },
+    "useExtendedLib": {
+        "kbone": true,
+        "weui": true
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}
