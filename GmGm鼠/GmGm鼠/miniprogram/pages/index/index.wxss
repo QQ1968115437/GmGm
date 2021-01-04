@@ -1,7 +1,7 @@
 /* pages/index/index.wxss */
-/* 多处样式集 */
-.Top_nav{border-bottom: 1rpx solid #eeeeee;}
+
 /* <!-- 顶部导航 --> */
+.Top_nav{border-bottom: 1rpx solid #eeeeee;}
 .Top_nav{display: flex;color: #999999;font-weight: bold;}
 .Top_nav>view{width: 50%;padding: 20rpx 0;text-align: center;}
 .Top_nav-actv{color: #14B9C8;border-bottom: 6rpx solid #14B9C8;}

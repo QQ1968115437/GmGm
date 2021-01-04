@@ -34,20 +34,38 @@
             </view>
         </view>
     
-        <view class="weixin"  wx:if="{{isRegister==0}}">
+        <view class="weixin"  wx:if="{{isRegister==0}}" bindtap="wx_login">
             <image src="../../images/icons/weixin.png"/>
             微信登录
         </view>
         <view class="weixin2" wx:else bindtap="register">立即注册</view>
     </view>
 </view>
+
+<!-- /* ******************* */
+/* 登录后 */
+/* ******************** */ -->
 <view wx:else>
+    <!-- /* 上部分 */ -->
     <view class="top_D">
-        <view>555</view>
         <view>
-            <image src="https://img3.tapimg.com/default_avatars/1c69e1685565afe2fd2a5cb57b36f4fb.jpg?imageView2/1/w/100/q/40/interlace/1/ignore-error/1"/>
+            <image src="../../images/icons/small_bell.png"/>
+            <image src="../../images/icons/sign_out.png" bindtap="log_off"/>
         </view>
-        <view>个地方打</view>
-        <view>55</view>
+        <view>
+            <image src="{{Ufaces||'../../images/user-unlogin.png'}}"/>
+        </view>
+        <view>{{Uname||"无名"}}</view>
+        <view>
+            <view></view>
+            <image src="../../images/icons/Quotation_marks_1.png"/>
+            <text>{{Uautograph||"个性签名..."}}</text>
+            <image src="../../images/icons/Quotation_marks_2.png"/>
+        </view>
+    </view>
+    <!-- /* 下部分 */ -->
+    <view class="Top_nav">
+        <view class="{{top_nav==0?'Top_nav-actv':''}}" bindtap="Top_nav_actv0">关注</view>
+        <view class="{{top_nav==0?'':'Top_nav-actv'}}" bindtap="Top_nav_actv1">评价</view>
     </view>
 </view>

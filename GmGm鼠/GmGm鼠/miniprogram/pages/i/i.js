@@ -6,7 +6,8 @@ Page({
      */
     data: {
         isRegister:0,account_number:0,password:0,again_password:0,isPrompt:1,After_login:0,
-        if_password:"",if_account_number:"",account_number_s:"",password_s:""
+        if_password:"",if_account_number:"",account_number_s:"",password_s:"",
+        Ufaces:"",Uname:"",Uautograph:"",top_nav:0
     },
     // *******************************
     // 输入框状态颜色有待优化封装
@@ -94,20 +95,28 @@ Page({
                 Uaccount_number:this.data.if_account_number,
                 Upasswored:this.data.if_password
             }).get({
-                success (res) {
+                success: (res)=>{
                     if(res.data.length==0){
                         wx.showToast({title:"请确认账号或密码是否正确！",icon: "none",duration: 2000})
                     }else{
                         wx.showToast({title:"登陆成功",icon: "none",duration: 2000});
+                        this.setData({After_login:1,Ufaces:res.data[0].Ufaces,Uname:res.data[0].Uname,Uautograph:res.data[0].Uautograph});
                     }
                 }
             })
         }else{
-            this.setData({After_login:1});
             wx.showToast({title:"请填写完整的账号信息",icon: "none",duration: 2000})
         }
     },
+    // 微信登陆
 
+    // 退出登陆
+    log_off(){
+        this.setData({
+            After_login:0,
+            account_number:0,password:0,
+        });
+    },
     /**
      * 生命周期函数--监听页面加载
      */

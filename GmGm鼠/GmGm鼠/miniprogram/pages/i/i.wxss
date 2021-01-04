@@ -38,16 +38,39 @@
 .weixin2{background-color: #14b9c8}
 
 /* 正确· */
-.correct{background-color: #13bf5299 !important;box-shadow: 0 0 30rpx hsl(142, 82%, 41%);}
+.correct{background-color: #13bf5299 !important;box-shadow: 0 0 30rpx #13bf52;}
 /* 错误· */
 .error{background-color: #bf131399 !important;box-shadow: 0 0 30rpx #bf1313;}
 
 /* ******************* */
 /* 登录后 */
 /* ******************** */
-.top_D{background-color: #14b9c8;text-align: center;padding-bottom: 20rpx;}
-.top_D>view:nth-child(1){height: 64rpx;display: flex;justify-content: flex-end;}
+/* 上部分 */
+.top_D{background-color: #14b9c8;text-align: center;padding-bottom: 65rpx;}
+.top_D>view:nth-child(1){height: 90rpx;display: flex;justify-content: flex-end;align-items: center;}
+.top_D>view:nth-child(1)>image{width: 46rpx;height: 42rpx;margin-right: 33rpx;}
 .top_D>view:nth-child(2){width: 160rpx;height: 160rpx;border-radius: 50%;border: 1rpx solid #ffffff;overflow: hidden;margin: 0 auto;}
 .top_D>view:nth-child(2)>image{width: 100%;height: 100%;}
-.top_D>view:nth-child(3){color: white;padding: 20rpx;font-size: 36rpx;}
-.top_D>view:nth-child(4){color: white;margin: 0 40rpx;font-size: 30rpx;padding: 10rpx 0; border-radius: 20rpx;background-color: #02a8b7b0;}
+.top_D>view:nth-child(3){color: white;padding: 25rpx;font-size: 36rpx;}
+.top_D>view:nth-child(4){
+    color: white;
+    margin: 0 40rpx;
+    font-size: 26rpx;
+    padding: 12rpx 25rpx; 
+    border-radius: 15rpx;
+    background-color: #02a8b7b0;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    position: relative;
+}
+.top_D>view:nth-child(4)>image{width: 38rpx;height: 38rpx;}
+.top_D>view:nth-child(4)>text{width: 80%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.top_D>view:nth-child(4)>view{border: 18rpx solid #ffffff00;border-bottom-color: #02a8b7b0;position: absolute;top: -32rpx;left: 48%;}
+
+/* 下部分 */
+/* <!-- 顶部导航 --> */
+.Top_nav{border-bottom: 1rpx solid #eeeeee;}
+.Top_nav{display: flex;color: #999999;font-weight: bold;}
+.Top_nav>view{width: 50%;padding: 20rpx 0;text-align: center;}
+.Top_nav-actv{color: #14B9C8;border-bottom: 6rpx solid #14B9C8;}

@@ -5,3 +5,21 @@
         <navigator url="./search/search" open-type="navigate"><image src="../../images/icons/search.png"/> 搜索</navigator>
     </view>
 <!-- 搜索框*************终 -->
+<view class="view0" wx:for="{{4}}">
+    <!-- 头 -->
+    <view class="view1">
+        <text class="text">{{innerText||555}}</text>
+        <!-- 默认不写数字为0,不删除 -->
+        <navigator class="navigator">查看更多</navigator>
+    </view>
+    <view class="view2">
+        <view wx:for="{{4}}">
+            <image src="https://img2.tapimg.com/bbcode/images/3b4468db435382e68bb954dae05afdd1.png?imageView2/2/w/984/h/9999/q/80/format/jpg/interlace/1/ignore-error/1"/>
+            <view>
+                <text>大会上一天让他核桃仁和</text>
+                <image src="../../images/icons/stars_circle.png" class="special-view06"/>
+                <text>{{innerScore||5.5}}</text>
+            </view>
+        </view>
+    </view>
+</view>
