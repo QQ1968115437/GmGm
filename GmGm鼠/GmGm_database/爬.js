@@ -8,7 +8,7 @@ let D=setInterval(()=>{
 },100);
 
 setTimeout(()=>{document.querySelectorAll(".taptap-app-card>a")[0].click()},1000);
-setTimeout(()=>{window.history.back(1)},8000);
+setTimeout(()=>{window.history.back()},8000);
 
 
 
